@@ -1,6 +1,6 @@
 import { Container, VStack, Heading, Text, Button, Box, SimpleGrid, Image } from "@chakra-ui/react";
 import { FaCalendarAlt, FaPlus } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate(); // Initialize useNavigate
@@ -25,7 +25,7 @@ const Index = () => {
               Event 1
             </Heading>
             <Text mb={4}>Description of Event 1</Text>
-            <Button leftIcon={<FaCalendarAlt />} colorScheme="teal">
+            <Button leftIcon={<FaCalendarAlt />} colorScheme="teal" onClick={() => navigate('/event-details', { state: { name: 'Event 1', description: 'Description of Event 1', date: '2023-10-01', image: '/images/event1.jpg' } })}>
               View Details
             </Button>
           </Box>
@@ -35,7 +35,7 @@ const Index = () => {
               Event 2
             </Heading>
             <Text mb={4}>Description of Event 2</Text>
-            <Button leftIcon={<FaCalendarAlt />} colorScheme="teal">
+            <Button leftIcon={<FaCalendarAlt />} colorScheme="teal" onClick={() => navigate('/event-details', { state: { name: 'Event 2', description: 'Description of Event 2', date: '2023-10-02', image: '/images/event2.jpg' } })}>
               View Details
             </Button>
           </Box>
